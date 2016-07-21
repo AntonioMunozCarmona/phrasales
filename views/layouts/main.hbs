@@ -1,0 +1,18 @@
+{{#compress}}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {{> site/metas }}
+    <title>{{ tittle }}</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+</head>
+<body>
+    {{> site/header }}
+
+    <div class="container">
+        {{{ body }}}
+    </div>
+    {{> development/livereload }}
+</body>
+</html>
+{{/compress}}

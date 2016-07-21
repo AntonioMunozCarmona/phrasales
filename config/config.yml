@@ -1,0 +1,40 @@
+---
+production: &default
+  serverPort: 3333
+  baseUrl: http://www.elChatdeAntonio.com
+  site:
+    title: Proyecto de Juego de preguntas
+    description: web de pruebas
+  views:
+    engine: .hbs
+    extension: .hbs
+    layout: main
+  html:
+    livereload: false
+    minify: true
+    css:
+      stylusPrecompile: true
+      compress: true
+  app:
+    default: blog
+  languajes:
+    default: en
+    list: [en, es]
+
+stage: &stage
+  <<: *default
+  baseUrl: http://stage.elChatdeAntonio.com
+
+latest: &latest
+  <<: *stage
+  baseUrl: http://latest.elChatdeAntonio.com
+
+development:
+  <<: *latest
+  baseUrl: http://local.elChatdeAntonio.com
+  html:
+    livereload: true
+    minify: false
+    css:
+      stylusPrecompile: false
+      compress: false

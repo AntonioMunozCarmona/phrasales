@@ -1,0 +1,77 @@
+.Only_for_my_eyes
+Desde el principio
+
+Teniendo instalado node  y, por tanto, npm
+A nivel Global tenemos instalado:
+(con npm install -g packete)
+- express
+- ncu ( npm-check-updates )
+- gulp
+- stylus
+
+
+Vamos al directorio de Apps a partir del cual se crearán la estructura de la aplicacion
+
+express --css stylus --git phrasales  	// Crea la estructura con express-handlebars 													// stylus y el gitignore
+
+cd phrasales  //Cambiamos al directorio phrasales
+npm install   //Instalamos las dependencias
+
+
+ncu -g 		// Ejecuta npm-check-updates que está instalado en global para ver si hay alguna
+			// actualizacion de algun paquete a nivel global
+			// Si nos indica alguna la actualizamos ncu -g -u
+			// Información en ncu -h
+ncu 		// Para ver si alguna dependencia se debe actualizar. Si la hay => ncu -u
+
+Generamos fichero
+.editorconfig:  Para configurar el editor (tiene que tener instalado el paquete editorConfig)
+.eslintrc       Configura las normas de eslint http://eslint.org/
+
+Instalamos dependencias: (con npm install --save <paquete>)
+express-handlebars
+html-minifier
+js-yaml
+
+Instalamos dev-dependencias (con npm install --save-dev <paquete> )
+gulp-eslint
+gulp
+gulp-mocha
+
+
+Pafa configurar GULP
+(VER https://frontendlabs.io/1669--gulp-js-en-espanol-tutorial-basico-primeros-pasos-y-ejemplos
+Y https://frontendlabs.io/1752--gulp-js-plugins-como-configurar-tareas)
+Crear ficheros:
+
+gulpfile.babel.js
+eslint.js
+
+Instalamos babel
+a) Creamos fichero .babelrc
+b) Instalamos dependencias (con npm install --save <paquete>)
+
+babel-eslint
+babel-preset-es2015
+babel-preset-stage-0
+babel-preset-stage-1
+babel-register
+
+c) Instalamos dev-dependencias (con npm install --save-dev <paquete> )
+
+eslint-plugin-babel
+eslint-plugin-import
+eslint-plugin-standard
+ghooks
+gulp-livereload
+gulp-nodemon
+gulp-notify
+gulp-stylus
+nodemon
+
+1- dependencias:
+express-handlebars html-minifier js-yaml babel-eslint babel-preset-es2015 babel-preset-stage-0 babel-preset-stage-1 babel-register
+
+2- dev-dependencias
+
+gulp-eslint gulp gulp-mocha eslint-plugin-babel eslint-plugin-import eslint-plugin-standard ghooks gulp-livereload gulp-nodemon gulp-notify gulp-stylus nodemon
