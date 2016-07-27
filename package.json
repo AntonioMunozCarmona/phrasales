@@ -5,6 +5,10 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "engines":{
+    "node": ">4.4.0",
+    "npm": ">3.10.0"
+  },
   "dependencies": {
     "babel-eslint": "^6.1.2",
     "babel-preset-es2015": "^6.9.0",
