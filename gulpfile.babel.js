@@ -4,6 +4,7 @@ import livereload from 'gulp-livereload';
 import nodemon from 'gulp-nodemon';
 import notify from 'gulp-notify';
 import stylus from 'gulp-stylus';
+import babel from 'gulp-babel';
 
 // Linter task
 gulp.task('eslint', () => {
@@ -14,6 +15,13 @@ gulp.task('eslint', () => {
   .pipe(eslint())
   .pipe(eslint.format())
   .pipe(eslint.failAfterError());
+});
+
+//Babel
+gulp.task("default", function () {
+  return gulp.src("src/**/*.js")
+    .pipe(babel())
+    .pipe(gulp.dest("public/javascripts/"));
 });
 
 // Stylus task
