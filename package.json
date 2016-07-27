@@ -2,8 +2,13 @@
   "name": "phrasales",
   "version": "0.0.0",
   "private": true,
+  "main":"app.js",
   "scripts": {
-    "start": "node ./bin/www"
+        "start": "babel-node ."
+  },
+  "engines":{
+    "node": ">4.4.0",
+    "npm": ">3.10.0"
   },
   "dependencies": {
     "babel-eslint": "^6.1.2",
