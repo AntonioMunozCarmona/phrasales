@@ -1,7 +1,32 @@
 {{#compress}}
 <div id="portada">
-  {{ respuesta }}
+
   <br/>
-  <a href="/juego/question"> Inténtelo otra vez</a>
+  {{#if respuesta}}
+    <div class="respuesta btn-primary">
+      <h3> !!! MAGNIFICO !!!</h3>
+      <p>{{pregunta}}</p>
+      <p>{{sign}}</p>
+      {{#if ejemplo}}
+        {{ejemplo}}
+       {{/if}}
+    </div>
+    <button class="btn-success"> <a href="/juego/question">Seguir jugando</a></button>
+    <button class="btn-success"> <a href="/">Inicio</a></button>
+
+  {{else}}
+    <div class="respuesta btn-danger">
+      <h3>Esta vez no es correcto</h3>
+      <p>{{pregunta}}</p>
+      <p>{{sign}}</p>
+      {{#if ejemplo}}
+        {{ejemplo}}
+      {{/if}}
+      <h3>!! Otra vez será...</h3>
+    </div>
+    <button class="btn-success"> <a href="/juego/question">Seguir jugando</a></button>
+    <button class="btn-success"> <a href="/">Inicio</a></button>
+  {{/if}}
+
 </div>
 {{/compress}}

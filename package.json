@@ -11,17 +11,20 @@
     "npm": ">3.10.0"
   },
   "dependencies": {
+    "babel-eslint": "^6.1.2",
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
-    "express": "~4.13.4",
+    "express": "~4.14.0",
     "express-handlebars": "^3.0.0",
     "html-minifier": "^3.0.1",
     "js-yaml": "^3.6.1",
     "morgan": "~1.7.0",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "sequelize": "^3.23.6",
     "serve-favicon": "~2.3.0",
+    "sqlite3": "^3.1.4",
     "stylus": "0.54.5"
   },
   "devDependencies": {
@@ -43,7 +46,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-eslint": "^3.0.1",
     "gulp-livereload": "^3.8.1",
-    "gulp-mocha": "^2.2.0",
+    "gulp-mocha": "^3.0.1",
     "gulp-nodemon": "^2.1.0",
     "gulp-notify": "^2.2.0",
     "gulp-stylus": "^2.5.0",

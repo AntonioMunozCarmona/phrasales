@@ -28,3 +28,8 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
+
+.DS_Store
+baseDatos.sqlite
+convertcsv (1).json
+.Only_for_my_eyes

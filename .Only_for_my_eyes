@@ -39,7 +39,7 @@ gulp
 gulp-mocha
 
 
-Pafa configurar GULP
+Para configurar GULP
 (VER https://frontendlabs.io/1669--gulp-js-en-espanol-tutorial-basico-primeros-pasos-y-ejemplos
 Y https://frontendlabs.io/1752--gulp-js-plugins-como-configurar-tareas)
 Crear ficheros:

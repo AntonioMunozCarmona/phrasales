@@ -9,8 +9,8 @@ import babel from 'gulp-babel';
 // Linter task
 gulp.task('eslint', () => {
   return gulp.src([
-    'src/**/*.js',
-    '!src/public/bower_components/**/*.js'
+    './**/*.js',
+    '!/public/bower_components/**/*.js'
   ])
   .pipe(eslint())
   .pipe(eslint.format())
@@ -18,15 +18,15 @@ gulp.task('eslint', () => {
 });
 
 //Babel
-gulp.task("default", function () {
-  return gulp.src("src/**/*.js")
+gulp.task('default', function () {
+  return gulp.src('./**/*.js')
     .pipe(babel())
-    .pipe(gulp.dest("public/javascripts/"));
+    .pipe(gulp.dest('public/javascripts'));
 });
 
 // Stylus task
 gulp.task('stylus', () => {
-  return gulp.src('public/stylesheets/style.styl')
+  return gulp.src('public/stylesheets/*.styl')
     .pipe(stylus({
       compress: true
     }))

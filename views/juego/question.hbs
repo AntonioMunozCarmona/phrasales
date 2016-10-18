@@ -1,37 +1,31 @@
 {{#compress}}
 
-  <div id="contenedor">
-   <div class="Marcador">Aciertos: </div>
-   <div class="pregunta">
-    Pregunta: {{ pregunta }}
-   </div>
-   <p>Elija la respuesta adecuada</p>
-   <form method="get" action="/juego/answer">
-    <div class="radio">
-      <label>
-        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
-        {{opcion1}}
-      </label>
+<div id="contenedor">
+  <h4>Elija la respuesta adecuada</h4>
+  <div class="Marcador">Aciertos:
+    <div class="pregunta">
+      Pregunta: {{ pregunta }}
     </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="opciones" id="opciones_2" value="opcion_2">
-         {{opcion2}}
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="opciones" id="opciones_3" value="opcion_3">
-         {{opcion3}}
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="opciones" id="opciones_4" value="opcion_4">
-         {{opcion4}}
-      </label>
-    </div>
-    <input type="submit" value="Enviar">
-   </form>
   </div>
+
+
+  <form method="get" action="/juego/answer">
+    <div class="btn-group-vertical">
+
+      <button type="submit" class="btn btn-primary btn-lg btn-block" name="opciones" value="opcion1">
+          {{opcion1}}
+      </button>
+      <button type="submit" class="btn btn-success btn-lg btn-block" name="opciones" value="opcion2">
+          {{opcion2}}
+      </button>
+      <button type="submit" class="btn btn-warning btn-lg btn-block" name="opciones" value="opcion3">
+          {{opcion3}}
+      </button>
+      <button type="submit" class="btn btn-danger btn-lg btn-block" name="opciones" value="opcion4">
+
+          {{opcion4}}
+      </button>
+    </div>
+  </form>
+</div>
 {{/compress}}

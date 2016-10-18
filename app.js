@@ -7,9 +7,11 @@ var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 import stylus from 'stylus';
 
+// Configuracion
 import config from './lib/config';
 import hbsHelpers from './lib/handlebars';
 
+//Rutas
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -38,7 +40,7 @@ app.use((req, res, next) => {
   res.locals.config = $config();
   next();
 });
-console.log($config().views.engine);
+
 // Handlebars setup
 app.engine($config().views.engine, exphbs({
   extname: $config().views.extension,
