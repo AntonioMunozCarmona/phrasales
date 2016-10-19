@@ -47,7 +47,9 @@ gulp.task('start-dev', () => {
     script: './server.js',
     ext: 'js',
     env: {
-      'NODE_ENV': 'development'
+      'NODE_ENV': 'development',
+      'DATABASE_URL': 'sqlite://:@:/',
+      'DATABASE_STORAGE': 'baseDatos.sqlite'
     }
   }).on('restart', () => {
     gulp.src('./server.js')
