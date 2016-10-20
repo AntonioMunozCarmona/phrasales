@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "babel-eslint": "^6.1.2",
+    "babel-register": "^6.11.6",
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
@@ -38,7 +39,6 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
-    "babel-register": "^6.11.6",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-import": "^1.11.1",
     "eslint-plugin-standard": "^2.0.0",
@@ -52,9 +52,6 @@
     "gulp-notify": "^2.2.0",
     "gulp-stylus": "^2.5.0",
     "nodemon": "^1.9.2",
-    "sqlite3": "^3.1.4",
-    "webpack": "^1.13.1",
-    "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.12.2"
+    "sqlite3": "^3.1.4"
   }
 }
