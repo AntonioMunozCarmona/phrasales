@@ -69,4 +69,15 @@ gulp.task('start', () => {
   });
 });
 
+//Start en Heroku
+gulp.task('heroku:production', () => {
+  nodemon({
+    script: './server.js',
+    ext: 'js',
+    env: {
+      'NODE_ENV': 'production'
+    }
+  });
+});
+
 gulp.task('default', ['livereload', 'start-dev']);
