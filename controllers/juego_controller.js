@@ -7,6 +7,7 @@ var preguntas=[],
   preguntasTexto=[];
 var laPregunta ='', laEjemplo = '';
 var count = 0,
+  marcador =0,
   nuevo=0,
   resCorrecta=0;
 //Importamos la función aleatorio
@@ -85,6 +86,7 @@ exports.question = function (req, res) {
           }).then(function(base) {
 
             res.render('juego/question', {
+              marcador: marcador,
               pregunta: laPregunta,
               opcion1:preguntasTexto[1],
               opcion2:preguntasTexto[2],
@@ -103,14 +105,18 @@ exports.answer = (req, res) => {
   console.log(`Respuesta ${req.query.opciones} => opcion${resCorrecta}`);
 
   if (req.query.opciones === `opcion${resCorrecta}`) {
+    marcador = marcador +1;
     res.render('juego/answer', {
+      marcador: marcador,
       respuesta: 'Correcto',
       pregunta: laPregunta,
       sign:preguntasTexto[resCorrecta],
       ejemplo: laEjemplo
     });
   } else {
+    marcador = 0;
     res.render('juego/answer', {
+      marcador: marcador,
       respuesta: '',
       pregunta: laPregunta,
       sign:preguntasTexto[resCorrecta],

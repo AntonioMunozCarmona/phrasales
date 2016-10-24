@@ -1,12 +1,15 @@
 {{#compress}}
 
 <div id="contenedor">
-  <h4>Elija la respuesta adecuada</h4>
-  <div class="Marcador">Aciertos:
-    <div class="pregunta">
-      Pregunta: {{ pregunta }}
-    </div>
+  <div class="pantalla">
+    <div class="Aciertos">{{marcador}}</div>
+    <h4>Elija la respuesta adecuada</h4>
   </div>
+    <div class="Marcador">
+      <div class="pregunta">
+        Pregunta: {{ pregunta }}
+      </div>
+    </div>
 
 
   <form method="get" action="/juego/answer">
@@ -22,7 +25,6 @@
           {{opcion3}}
       </button>
       <button type="submit" class="btn btn-danger btn-lg btn-block" name="opciones" value="opcion4">
-
           {{opcion4}}
       </button>
     </div>
