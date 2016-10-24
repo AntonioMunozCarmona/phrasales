@@ -6,6 +6,6 @@ module.exports = function(sequelize, DataTypes) {
   { Pregunta: DataTypes.STRING,
     Pron: DataTypes.STRING,
     Significado: DataTypes.STRING,
-    Ejemp_Ing: DataTypes.STRING
+    EjempIng: DataTypes.STRING
     });
 };

@@ -5,7 +5,7 @@ var models = require('../models/models.js');
 var BaseDatos = models.BaseDatos;
 var preguntas=[],
   preguntasTexto=[];
-var laPregunta ='', laejemplo = '';
+var laPregunta ='', laEjemplo = '';
 var count = 0,
   nuevo=0,
   resCorrecta=0;
@@ -17,69 +17,70 @@ exports.question = function (req, res) {
   BaseDatos.findAll().then(function (base) {
     preguntas = [];
     preguntasTexto = [];
-    laPregunta = '', laejemplo = '';
+    laPregunta = '';
+    laEjemplo = '';
     count = base.length;
-    console.log('Desde juego_controller: ' + count);
+    console.log('Desde juego_controller: ${count}');
     resCorrecta = aleatorio(1, 4);
-    console.log('La respuesta correcta: ' + resCorrecta);
+    console.log('La respuesta correcta: ${resCorrecta}');
 
     do {
       nuevo = aleatorio(1, count);
 
       // Si el elemento no se encuentra en preguntas[] agregar (push), en caso
       // de que sea se encuentre (continue;), saltar al siguente.
-      if (preguntas.indexOf(nuevo)!=-1) {
+      if (preguntas.indexOf(nuevo)!==-1) {
         continue;
       } else {
         preguntas.push(nuevo);
       }
 
     } while (preguntas.length < 4);
-    console.log('El array de preguntas es: '+ preguntas);
+    console.log('El array de preguntas es: ${preguntas}');
 
   }).then(function(base) {
-    console.log('Las preguntas son: '+preguntas +' y la correcta es '+resCorrecta);
+    console.log('Las preguntas son: ${preguntas} y la correcta es ${resCorrecta}');
 
     BaseDatos.findById(preguntas[0]).then(function(base) {
       preguntasTexto[1] = base.Significado;
-      if (resCorrecta == 1) {
+      if (resCorrecta === 1) {
         laPregunta = base.Pregunta;
-        laejemplo = base.Ejemp_Ing;
-        console.log('la Pregunta: '+laPregunta);
+        laEjemplo = base.EjempIng;
+        console.log('la Pregunta: ${laPregunta}');
       }
-      console.log('la opcion 1 '+preguntasTexto[1]);
+      console.log('la opcion 1 ${preguntasTexto[1]}');
 
     }).then(function(base) {
 
       BaseDatos.findById(preguntas[1]).then(function(base) {
         preguntasTexto[2] = base.Significado;
-        if (resCorrecta == 2) {
+        if (resCorrecta === 2) {
           laPregunta = base.Pregunta;
-          laejemplo = base.Ejemp_Ing;
-          console.log('la Pregunta: '+laPregunta);
+          laEjemplo = base.EjempIng;
+          console.log('la Pregunta: ${laPregunta}');
         }
-        console.log('la opcion 2 '+preguntasTexto[2]);
+        console.log('la opcion 2 ${preguntasTexto[2]}');
 
       }).then(function(base) {
 
         BaseDatos.findById(preguntas[2]).then(function(base) {
           preguntasTexto[3] = base.Significado;
-          if (resCorrecta == 3) {
+          if (resCorrecta === 3) {
             laPregunta = base.Pregunta;
-            laejemplo = base.Ejemp_Ing;
-            console.log('la Pregunta: '+laPregunta);
+            laEjemplo = base.EjempIng;
+            console.log('la Pregunta: ${laPregunta}');
           }
-          console.log('la opcion 3 '+preguntasTexto[3]);
+          console.log('la opcion 3 ${preguntasTexto[3]}');
 
         }).then(function(base) {
           BaseDatos.findById(preguntas[3]).then(function(base) {
             preguntasTexto[4] = base.Significado;
-            if (resCorrecta == 4) {
+            if (resCorrecta === 4) {
               laPregunta = base.Pregunta;
-              laejemplo = base.Ejemp_Ing;
-              console.log('la Pregunta: '+laPregunta);
+              laEjemplo = base.EjempIng;
+              console.log('la Pregunta: ${laPregunta}');
             }
-            console.log('la opcion 4 '+preguntasTexto[4]);
+            console.log('la opcion 4 ${preguntasTexto[4]}');
 
           }).then(function(base) {
 
@@ -99,21 +100,21 @@ exports.question = function (req, res) {
 
 //GET juego/answer
 exports.answer = (req, res) => {
-  console.log('Respuesta '+req.query.opciones+ '=>'+'opcion'+resCorrecta);
+  console.log('Respuesta ${req.query.opciones} => ${opcion}${resCorrecta}');
 
-  if (req.query.opciones == ('opcion'+resCorrecta)) {
+  if (req.query.opciones === 'opcion${resCorrecta}') {
     res.render('juego/answer', {
       respuesta: 'Correcto',
       pregunta: laPregunta,
       sign:preguntasTexto[resCorrecta],
-      ejemplo: laejemplo
+      ejemplo: laEjemplo
     });
   } else {
     res.render('juego/answer', {
       respuesta: '',
       pregunta: laPregunta,
       sign:preguntasTexto[resCorrecta],
-      ejemplo: laejemplo
+      ejemplo: laEjemplo
     });
   }
 
