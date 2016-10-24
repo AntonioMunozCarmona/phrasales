@@ -1,7 +1,7 @@
 ---
 production: &default
   serverPort: 3333
-  baseUrl: http://www.elChatdeAntonio.com
+  baseUrl: https://phrasales.herokuapp.com/
   site:
     title: Phrasales.
     description: Juego de preguntas sobre phrasals verbs

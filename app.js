@@ -15,7 +15,7 @@ import hbsHelpers from './lib/handlebars';
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-const app = express();
+var app = express();
 
 // Loading config
 global.$config = config;
