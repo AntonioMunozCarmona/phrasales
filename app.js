@@ -103,6 +103,20 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.set('port', process.env.PORT || $config().serverPort || 3000);
+app.listen(app.get('port'));
+console.log(`escuchando en el puerto ${app.get('port')}`);
 
-app.listen($config().serverPort || 3000);
+/*
+app.set('port', process.env.PORT || 3000);
 
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});
+
+var serverSecure = https.createServer(options, app);
+serverSecure.listen(8443, function() {
+  debug('Express server listening on port ' + server.address().port);
+});
+
+*/
